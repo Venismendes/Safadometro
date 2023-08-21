@@ -1,0 +1,52 @@
+<Manager>:
+    MainScreen:
+        name: 'mainscreen'
+<MainScreen>:
+    BoxLayout:
+        canvas:
+			Color:
+				rgba: 0.074, 0.105, 0.137, 1
+			Rectangle:
+				size: self.size
+				pos: self.pos
+        orientation: 'vertical'
+        Label:
+            text: 'Bem vindo ao safadometro!'
+            font_size: 30
+        Label:
+            id: resultado
+            font_size: 20
+        GridLayout:
+            rows: 2
+            cols: 3
+            spacing: 2
+            GrayLabel:
+                text: 'Dia'
+            GrayLabel:
+                text: 'Mês'
+            GrayLabel:
+                text: 'Ano'
+            TextInput:
+                id: inputdia
+                font_size: 35
+                multiline: False
+            TextInput:
+                id: inputmes
+                font_size: 35
+                multiline: False
+            TextInput:
+                id: inputano
+                font_size: 35
+                multiline: False
+        Button:
+            text: 'Calcular'
+            on_release:
+                root.calcular()
+
+<GrayLabel@Label>
+    canvas.before:
+        Color:
+            rgba: 0.3, 0.3, 0.3, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
